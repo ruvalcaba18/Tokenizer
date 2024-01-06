@@ -10,8 +10,10 @@ class TokenizenModel {
     var languageDict: [String: [String]] = [:]
     
     init() {
-        languageDict["en"] = ["if", "and"]
-        languageDict["es"] = ["si", "y"]
+        languageDict["en-MX"] = ["if", "and"]
+        languageDict["es-MX"] = ["si", "y"]
+        languageDict["en-US"] = ["if", "and"]
+        languageDict["es-US"] = ["si", "y"]
         languageDict["ru"] = ["если", "и"]
         languageDict["uk"] = ["якщо", "і"]
     }

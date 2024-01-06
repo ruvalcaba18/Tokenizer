@@ -32,10 +32,11 @@ class ViewController: UIViewController {
     }
 
     @IBAction func tokenizeText(_ sender: UIButton) {
-        var language = Locale.preferredLanguages[0]
+        let language = Locale.preferredLanguages[0]
         let tokens = tokenModel.tokenizeText(inputText.text, forLanguage: language)
         let resultText = tokens.joined(separator: ", \n")
         answerLabel.text = "Tokens: \(resultText)"
+        self.inputText.resignFirstResponder()
     }
     
 }
@@ -48,4 +49,5 @@ extension ViewController: UITextViewDelegate {
         return true
     }
     
+   
 }

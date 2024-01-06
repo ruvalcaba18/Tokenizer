@@ -25,29 +25,31 @@ final class TokenizedSwiftAppTests: XCTestCase {
     func test_EnglishTokenization() {
         let text = "This is a test, and it contains an if statement."
         
-        let tokens = tokenizer.tokenizeText(text, forLanguage: "English")
+        let tokens = tokenizer.tokenizeText(text, forLanguage: "en-US")
+        let tokensMX = tokenizer.tokenizeText(text, forLanguage: "en-MX")
         XCTAssertEqual(tokens, ["this is a test, and", " it contains an if" ," statement."])
     }
     
     func test_SpanishTokenization() {
         let text = "Esto es una prueba y contiene una declaración si."
         
-        let tokens = tokenizer.tokenizeText(text, forLanguage: "Spanish")
-        
+        let tokens = tokenizer.tokenizeText(text, forLanguage: "es-US")
+        let tokensMX = tokenizer.tokenizeText(text, forLanguage: "es-MX")
         XCTAssertEqual(tokens, ["esto es una prueba y", " contiene una declaración si", "."])
+        XCTAssertEqual(tokensMX, ["esto es una prueba y", " contiene una declaración si", "."])
     }
     
     func test_RussianTokenization() {
         let text = "Это тест, и в нем есть условие если."
         
-        let tokens = tokenizer.tokenizeText(text, forLanguage: "Russian")
+        let tokens = tokenizer.tokenizeText(text, forLanguage: "ru")
         
         XCTAssertEqual(tokens,["это тест, и", " в нем есть услови", "е если", "."])
     }
     
     func test_UkrainianTokenization() {
         let text = "Це тест, і в ньому є умова якщо."
-        let tokens = tokenizer.tokenizeText(text, forLanguage: "Ukrainian")
+        let tokens = tokenizer.tokenizeText(text, forLanguage: "uk")
         XCTAssertEqual(tokens, ["це тест, і", " в ньому є умова якщо", "."])
     }
     
